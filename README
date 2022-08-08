@@ -1,0 +1,25 @@
+# NEPTUNE Project Website
+
+This directory contains the source code for the Project NEPTUNE website.
+To build the site locally, do
+
+```
+$ ./tohtml.bash
+```
+
+To view the site, load `site/index.html` in a browser.
+
+## Softlinks
+
+The source for the website is in folders with acronym names.
+To create human-readable softlinks, run
+
+```
+$ ./lns.bash
+```
+
+and to remove these again, run
+
+```
+$ ./rmln.bash
+```

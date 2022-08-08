@@ -1,0 +1,99 @@
+@article{firedrake2016,
+    author = {Rathgeber, F. and Ham, D.A. and Mitchell, L. and Lange, M. and Luporini, F. and Mcrae, Andrew T.T. and Bercea, G.-T. and Markall, G.R. and Kelly, P.H.J.},
+    title = {Firedrake: Automating the Finite Element Method by Composing Abstractions},
+    year = {2016},
+    issue_date = {January 2017},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {43},
+    number = {3},
+    issn = {0098-3500},
+    url = {https://doi.org/10.1145/2998441},
+    doi = {10.1145/2998441},
+    abstract = {Firedrake is a new tool for automating the numerical solution of partial differential equations. Firedrake adopts the domain-specific language for the finite element method of the FEniCS project, but with a pure Python runtime-only implementation centered on the composition of several existing and new abstractions for particular aspects of scientific computing. The result is a more complete separation of concerns that eases the incorporation of separate contributions from computer scientists, numerical analysts, and application specialists. These contributions may add functionality or improve performance.Firedrake benefits from automatically applying new optimizations. This includes factorizing mixed function spaces, transforming and vectorizing inner loops, and intrinsically supporting block matrix operations. Importantly, Firedrake presents a simple public API for escaping the UFL abstraction. This allows users to implement common operations that fall outside of pure variational formulations, such as flux limiters.},
+    journal = {ACM Trans. Math. Softw.},
+    month = dec,
+    articleno = {24},
+    numpages = {27},
+    keywords = {UFL, Abstraction, code generation}
+}
+
+@misc{irksome2020,
+      title={Irksome: Automating Runge--Kutta time-stepping for finite element methods}, 
+      author={Patrick E. Farrell and Robert C. Kirby and Jorge Marchena-Menendez},
+      year={2020},
+      eprint={2006.16282},
+      archivePrefix={arXiv},
+      primaryClass={math.NA}
+}
+
+
+@techreport{arter_solf1d_2015,
+  author      = "Arter, Wayne",
+  title       = {{Study of source terms in the SOLF1D edge code}},
+  institution = {{Eurofusion/CCFE}},
+  year        = {2015},
+  type        = "",
+  number      = "",
+  address     = "",
+  month       = "",
+  note        = {{CCFE-DETACHMENT-RP2-Draft}},
+  annote      = ""
+}
+
+
+@article{solbenchmark2013,
+  doi = {10.1088/0741-3335/55/6/065004},
+  url = {https://doi.org/10.1088/0741-3335/55/6/065004},
+  year = 2013,
+  month = {may},
+  publisher = {{IOP} Publishing},
+  volume = {55},
+  number = {6},
+  pages = {065004},
+  author = {E Havl{\'{\i}}{\v{c}}kov{\'{a}} and W Fundamenski and F Subba and D Coster and M Wischmeier and G Fishpool},
+  title = {Benchmarking of a 1D scrape-off layer code {SOLF}1D with {SOLPS} and its use in modelling long-legged divertors},
+  journal = {Plasma Physics and Controlled Fusion},
+  abstract = {A 1D code modelling scrape-off layer (SOL) transport parallel to the magnetic field (SOLF1D) is benchmarked with 2D simulations of MAST-U SOL performed via the SOLPS code for two different collisionalities. Based on this comparison, SOLF1D is then used to model the effects of divertor leg stretching in 1D, in support of the planned Super-X divertor on MAST. The aim is to separate magnetic flux expansion from volumetric power losses due to recycling neutrals by stretching the divertor leg either vertically (B=0 in the divertor) or radially (B1/R).}
+}
+
+
+@book{stangeby2000,
+  title     = "The Plasma Boundary of Magnetic Fusion Devices",
+  author    = "Stangeby, Peter C",
+  year      = 2000,
+  publisher = "IOP Publishing"
+}
+
+@article{petsc1998,
+  title={{PETSc, the portable, extensible toolkit for scientific computation}},
+  author={Balay, Satish and Gropp, William and McInnes, Lois Curfman and Smith, Barry F},
+  journal={Argonne National Laboratory},
+  volume={2},
+  number={17},
+  year={1998}
+} 
+
+
+@article{Dudson_2019,
+  doi = {10.1088/1361-6587/ab1321},
+  url = {https://doi.org/10.1088/1361-6587/ab1321},
+  year = 2019,
+  month = {may},
+  publisher = {{IOP} Publishing},
+  volume = {61},
+  number = {6},
+  pages = {065008},
+  author = {B D Dudson and J Allen and T Body and B Chapman and C Lau and L Townley and D Moulton and J Harrison and B Lipschultz},
+  title = {The role of particle, energy and momentum losses in 1D simulations of divertor detachment},
+  journal = {Plasma Physics and Controlled Fusion},
+  abstract = {A new 1D divertor plasma code, SD1D, has been used to examine the role of recombination, radiation, and momentum exchange in detachment. Neither momentum or power losses by themselves are found to be sufficient to produce a reduction in target ion flux in detachment (flux rollover); radiative power losses are required to (a) limit and reduce the ionisation source and (b) access low-target temperature, Ttarget, conditions for volumetric momentum losses. Recombination is found to play a small role at flux rollover, but as Ttarget drops to temperatures around 1 eV, it becomes a strong ion sink. In the case where radiative losses are dominated by hydrogen, the detachment threshold is identified as a minimum gradient of the energy cost per ionisation with respect to Ttarget. This is also linked to thresholds in Ttarget and in the ratio of upstream pressure to power flux. A system of determining the detached condition is developed such that the divertor solution at a given Ttarget (or lack of one) is determined by the simultaneous solution of two equations for target ion currentone dependent on power losses and the other on momentum. Depending on the detailed momentum and power loss dependence on temperature there are regions of Ttarget where there is no solution and the plasma jumps from high to low Ttarget states. The novel analysis methods developed here provide an intuitive way to understand complex detachment phenomena, and can potentially be used to predict how changes in the seeding impurity used or recycling aspects of the divertor can be utilised to modify the development of detachment.}
+}
+
+@article{eh2011,
+  title={{Steady-state and time-dependent modelling of parallel transport in the scrape-off layer}},
+  author={E Havl{\'{\i}}{\v{c}}kov{\'{a}} and W Fundamenski and V Naulin and A H Nielsen and R Zagorski and J Seidl and J Horacek},
+  journal={Plasma Physics and Controlled Fusion},
+  year={2011},
+  doi={10.1088/0741-3335/53/6/065004}
+}
