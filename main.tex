@@ -34,8 +34,8 @@
 \usepackage{xcolor}             % (Demonstration purpose
 \usepackage{amsmath}
 \usepackage{hyperref,cleveref}  % LOAD THESE LAST!
-
-\usepackage[backend=biber,sorting=none,citestyle=numeric-comp]{biblatex}
+\usepackage[british]{babel}
+\usepackage[backend=biber,sorting=none,citestyle=numeric-comp,dateabbrev=false]{biblatex}
 \addbibresource{./bib/new.bib}
 \addbibresource{./bib/waynes.bib}
 \addbibresource{./bib/misc.bib}
@@ -114,7 +114,7 @@
 \newcommand{\T}[1]{{\tt #1}}
 \newcommand{\V}[1]{\mathbf{#1}}
 \newcommand{\I}[1]{\textit{#1}}
-\input{../stdefns}
+\input{./stdefns}
 
 %%======================================================================
 
@@ -168,7 +168,7 @@ of the workshop~\cite{y3re181}, and the development document~\cite{y3re314}.
 \input{mainbody}
 \clearpage
 \chapter*{Acknowledgement}\label{sec:ackn}
-\input{../metackn.tex}
+\input{./metackn.tex}
 
 %\section*{References}
 %\bibliographystyle{unsrt}
