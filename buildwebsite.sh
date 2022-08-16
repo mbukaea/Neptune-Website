@@ -9,7 +9,7 @@ function buildwebsite() {
   do cp -r "$(pwd)/$i" ./public/
   done
   
-  cp {*.tex,*.css,*.sty,*.cls,*.bbl,*.bib,*.xml} public/
+  cp {*.tex,*.css} public/
 
   pdflatex -output-directory public main.tex
 
