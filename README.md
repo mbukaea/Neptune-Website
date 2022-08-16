@@ -16,3 +16,5 @@ sudo apt-get install -y texlive-bibtex-extra biber
 mkdir public
 bash buildwebsite.sh
 ```
+
+then open `public/index.html` in your preferred browswer.
