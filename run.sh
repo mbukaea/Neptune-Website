@@ -10,9 +10,9 @@ sed -i -e 's,<section class="textbody">,<h1>main</h1>,g' main.html
 test=$(grep -r -n 'bodyandsidetoc' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
 test2=$(grep -r -n 'bodycontainer' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
 test3=$( expr $test2 - 3)
-sed -n $test,$test3 p Engineering-Requirements-Baseline.html  >> sidebar.txt
+sed -n "${test},${test3} p" Engineering-Requirements-Baseline.html  >> sidebar.txt
 sed -i -e '/<div class="bodywithoutsidetoc">/r sidebar.txt' main.html
 for file in *.html; do file2="${file/-/ }";file3="${file2/-/ }" ; sed -i "s,<h1>main</h1>,<h1>${file3::-5}</h1>,g" ${file}; done 
 test4=$(grep -r -n '<h3 id' ./main.html | cut -f1 -d:)
-test5=$(grep -r -n '</nav>' ./main.html | cut -f1 -d:)
+test5=$(grep -r -n '</nav>' ./main.html | cut -f1 -d: | tail -n 1)
 sed -i -e "$test4,$test5 d" main.html
