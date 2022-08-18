@@ -32,9 +32,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate html
         run: |
-          sudo apt install -y texlive-latex-extra
-          sudo apt install -y texlive-lang-japanese
-          sudo apt-get install -y texlive-bibtex-extra biber
+          sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
           mkdir public
           bash buildwebsite.sh
       - name: Setup Pages
