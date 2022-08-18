@@ -5,7 +5,7 @@ function buildwebsite() {
   rm -rf public
   mkdir -p public
   
-  for i in PN BD RB TS DJF DDF MGT MF OP REF IND bib png corpics
+  for i in PN BD RB TS DJF DDF MGT MF OP REF IND bib png pics corpics
   do cp -r "$(pwd)/$i" ./public/
   done
   
@@ -26,7 +26,7 @@ function buildwebsite() {
   test4=$(grep -r -n '<h3 id' ./main.html | cut -f1 -d:)
   test5=$(grep -r -n '</nav>' ./main.html | tail -n 1 | cut -f1 -d:)
   sed -i -e "$test4,$test5 d" main.html
-  mv main.html index.html
+  cp main.html index.html
 }
 
 buildwebsite
