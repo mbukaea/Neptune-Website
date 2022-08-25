@@ -10,7 +10,7 @@ mkdir public
 bash buildwebsite.sh
 ```
 
-then open `public/index.html` in your preferred browswer.
+then open `public/index.html` in your preferred browser.
 
 ## Installation in WSL
 ### Ubuntu 22.04
