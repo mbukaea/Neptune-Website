@@ -5,7 +5,7 @@ function buildwebsite() {
   rm -rf public
   mkdir -p public
   
-  for i in PN BD RB TS DJF DDF MGT MF OP REF IND bib png pics corpics
+  for i in PN BD RB TS DJF DDF MGT MF OP proxyapps REF IND bib png pics corpics
   do cp -r "$(pwd)/$i" ./public/
   done
   
