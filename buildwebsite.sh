@@ -1,15 +1,15 @@
-#Produces pdf version of website contents, alongside lwarp files needed
+#0;10;1c#Produces pdf version of website contents, alongside lwarp files needed
 #to create the website
 #Compiles website using lwarp package
 function buildwebsite() {
   rm -rf public
   mkdir -p public
   
-  for i in PN BD RB TS DJF DDF MGT MF OP proxyapps REF IND bib png pics corpics
+  for i in PN BD RB TS DJF DDF MGT MF OP proxyapps REF IND bib png pics corpics Animations
   do cp -r "$(pwd)/$i" ./public/
   done
   
-  cp {*.tex,*.css} public/
+  cp {*.tex,*.css,*.txt} public/
 
   pdflatex -output-directory public main.tex
 
@@ -27,6 +27,9 @@ function buildwebsite() {
   test5=$(grep -r -n '</nav>' ./main.html | tail -n 1 | cut -f1 -d:)
   sed -i -e "$test4,$test5 d" main.html
   cp main.html index.html
+  sed -i -e '/videoinsert/r videos.txt' Videos.html
+  sed -i -e 's/videoinsert//g' Videos.html
+  sed -i -e 's/Index 0/Index/g' Index-0.html
 }
 
 buildwebsite

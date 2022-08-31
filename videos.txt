@@ -1,0 +1,11 @@
+<video width="480" height="480" controls preload="auto">
+  <source type="video/mp4" src="./Animations/HasegawaWakatani.mp4">
+</video>
+
+<video width="480" height="480" controls preload="auto">
+  <source type="video/mp4" src="./Animations/SlotConvection.mp4">
+</video>
+
+<video width="480" height="480" controls preload="auto">
+  <source type="video/mp4" src="./Animations/VlasovPoisson.mp4">
+</video>
