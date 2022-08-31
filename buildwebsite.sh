@@ -32,3 +32,4 @@ function buildwebsite() {
   sed -i -e 's/Index 0/Index/g' Index-0.html
 }
 
+buildwebsite
