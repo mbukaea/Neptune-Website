@@ -1,4 +1,4 @@
-#0;10;1c#Produces pdf version of website contents, alongside lwarp files needed
+#Produces pdf version of website contents, alongside lwarp files needed
 #to create the website
 #Compiles website using lwarp package
 function buildwebsite() {
@@ -31,6 +31,4 @@ function buildwebsite() {
   sed -i -e 's/videoinsert//g' Videos.html
   sed -i -e 's/Index 0/Index/g' Index-0.html
 }
-
-buildwebsite
 
