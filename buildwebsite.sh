@@ -10,10 +10,13 @@ function buildwebsite() {
   done
   
   cp {*.tex,*.css,*.txt} public/
-
-  pdflatex -output-directory public main.tex
-
-  cd public
+  cd ./public
+  pdflatex  main.tex
+  biber main.bcf
+  pdflatex main.tex
+  pdflatex main.tex
+  if [ "$1" != "PDF" ]
+  then
   lwarpmk html
   #Changes headers of each html file to contain name of section + adds sidebar to main page
   sed -i -e 's,<section class="textbody">,<h1>Neptune</h1>,g' main.html
@@ -30,6 +33,7 @@ function buildwebsite() {
   sed -i -e '/videoinsert/r videos.txt' Videos.html
   sed -i -e 's/videoinsert//g' Videos.html
   sed -i -e 's/Index 0/Index/g' Index-0.html
+  fi
 }
 
-buildwebsite
+buildwebsite $1
