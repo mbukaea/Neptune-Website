@@ -1,5 +1,27 @@
 @import url("https://use.typekit.net/lyz0jsh.css");
 
+.parent {
+    text-align: center;
+    display: inline-block;
+    min-height: 530px;
+}
+.child {
+  max-width: 520px ;  
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+  min-height: 530px;
+}
+
+.child2 {
+  max-width: 440px ;
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  min-height: 530px;
+}
+
 t: -.5em ; }
 a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 	text-indent: -.5em ; }
