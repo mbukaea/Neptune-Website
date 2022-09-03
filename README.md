@@ -37,9 +37,9 @@ sudo do-release-upgrade
 
 To check you have upgrade to 22.04 after you have rebooted WSL use the following command
 
-'''
+```
 lsb_release -a
-'''
+```
 
 ## Installing WSL 
 
