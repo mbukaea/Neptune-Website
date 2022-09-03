@@ -20,6 +20,8 @@ function buildwebsite() {
   lwarpmk html
   #Changes headers of each html file to contain name of section + adds sidebar to main page
   sed -i -e 's,<section class="textbody">,<h1>Neptune</h1>,g' main.html
+  sed -i -e '/<div class="center">/r link.txt' main.html
+  sed -i -e '0,/<div class="center">/{s// /}' main.html
   test=$(grep -r -n 'bodyandsidetoc' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
   test2=$(grep -r -n 'bodycontainer' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
   test3=$( expr $test2 - 3)
