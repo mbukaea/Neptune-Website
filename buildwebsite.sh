@@ -31,6 +31,7 @@ function buildwebsite() {
   test4=$(grep -r -n '<h3 id' ./main.html | cut -f1 -d:)
   test5=$(grep -r -n '</nav>' ./main.html | tail -n 1 | cut -f1 -d:)
   sed -i -e "$test4,$test5 d" main.html
+  sed -i -e '693,694d' main.html
   cp main.html index.html
   #Resize images on webpages
   sed -i -e '/videoinsert/r videos.txt' Videos.html
