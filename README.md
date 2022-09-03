@@ -25,3 +25,22 @@ file://wsl%24/Ubuntu-22.04[path_to_website_repo]/public/index.html
 ### Ubuntu 20.04
 Note that the instructions for 22.04 won't work for 20.04, as the `texlive-latex-recommended` package contains an older version of lwarp.
 While it may be possible to upgrade lwarp, there are issues with using `tlmgr` that make this non-trivial.
+
+## Upgrading from Ubuntu 20.04 to 22.04
+
+You can upgrade from Ubuntu 20.04 to 22.04 within the terminal using the following commands
+```
+sudo apt update
+sudo apt upgrade
+sudo do-release-upgrade
+```
+
+To check you have upgrade to 22.04 after you have rebooted WSL use the following command
+
+'''
+lsb_release -a
+'''
+
+## Installing WSL 
+
+If you need to install WSL to your Windows system then follow this guide https://docs.microsoft.com/en-us/windows/wsl/install
