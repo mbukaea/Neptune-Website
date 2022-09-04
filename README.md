@@ -12,6 +12,20 @@ bash buildwebsite.sh
 
 then open `public/index.html` in your preferred browser.
 
+## PDF only
+If you want to generate just the pdf version of the website then you perform the following command
+
+```
+bash buildwebsite.sh PDF
+```
+
+##  Partial PDF and HTML generation
+If you want to generate just the pdf version of the website then you perform the following command (where proxyapps/proxyapps is replaced with the relative path to the tex file you want to convert to PDF and HTML)
+
+```
+bash singlepage.sh '\input{proxyapps/proxyapps}'
+```
+
 ## Installation in WSL
 ### Ubuntu 22.04
 To build the website, follow the instructions for the native linux distro above.
