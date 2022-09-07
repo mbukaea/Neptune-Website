@@ -108,6 +108,17 @@
 \newcommand{\Eq}[1]{Equation~(\ref{eq:#1})}
 \newcommand{\Eqs}[2]{Equations(\ref{eq:#1}) and~(\ref{eq:#2})}
 \newcommand{\Figs}[2]{Figures~\ref{fig:#1}--~\ref{fig:#2}}
+
+\newcommand{\newchapter}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
+\warpHTMLonly{ \ForceHTMLPage \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
+}
+
+\newcommand{\newsection}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
+\warpHTMLonly{ \ForceHTMLPage \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
+}
+
+\newcommand{\newsubsection}[2]{\textit{#1} {`#2'}}
+
 %Bold lc for script names, tt for computer code and file-names
 %\F{NEPTUNE} always in caps
 \newcommand{\F}[1]{\textsc{#1}}

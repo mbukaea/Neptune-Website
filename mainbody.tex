@@ -1,17 +1,17 @@
 %https://excalibur-neptune.readthedocs.io/en/latest
 
-\chapter{Program Name}\label{sec:PN}
+\newchapter{Program Name}{sec:PN}
 \input{PN/PN}
 % Sommerville  - Preface from Fig. 4.17 (p.128) The structure of a requirements document
 % Hewitt  - Program Name
 \input{approboxw}
 
-\chapter{Business Design}\label{sec:BD}
+\newchapter{Business Design}{sec:BD}
 \input{BD/BD}
 % sections 1 to 7 of Hewitt  - Business Design
 % Sommerville  - Introduction
 
-\chapter{Requirements Baseline}\label{sec:RB}
+\newchapter{Requirements Baseline}{sec:RB}
 The Requirements Baseline (RB) expresses the user requirements for the software.
 %The Interface requirements document (IRD) expresses the customer's interface
 %requirements for the software to be produced by the developer.
@@ -24,7 +24,7 @@ The Requirements Baseline (RB) expresses the user requirements for the software.
 % Smith  - Requirements  - Requirements  - Functional Requirements
 % Smith  - Requirements  - General System Description  - User Characteristics
 
-\chapter{Technical Specification}\label{sec:TS}
+\newchapter{Technical Specification}{sec:TS}
 The Technical Specification (TS)  contains the developer's response to the
 requirements baseline. %, and is the primary input to the PDR review process.
 %The Interface Control Document (ICD) is the developer's response to the IRD, and is part of the TS.
@@ -35,7 +35,7 @@ requirements baseline. %, and is the primary input to the PDR review process.
 % ICD Interface Control Document
 % Smith  - Requirements  - General System Description  - System Constraints
 
-\chapter{Design Justification File}\label{sec:DJF}
+\newchapter{Design Justification File}{sec:DJF}
 The Design Justification File (DJF) is generated and reviewed at all stages of the development
 and review processes.  It contains the documents that describe the trade-offs, design choice
 justifications, verification plan, validation plan, validation testing specification,
@@ -47,7 +47,7 @@ the design of the software.
 % Hewitt  - Application Design  - Testability
 % Hewitt  - Application Design  - Monitorability and metrics
 
-\chapter{Design Definition File}\label{sec:DDF}
+\newchapter{Design Definition File}{sec:DDF}
 The Design Definition File (DDF) is a developer-generated file that
 documents the result of the design engineering processes.
 %The DDF is the primary input to the CDR review process and it contains
@@ -68,7 +68,7 @@ documents the result of the design engineering processes.
 % Smith  - Requirements  - Requirements  - Nonfunctional Requirements
 % sections 1 and 2 of Hewitt  - Infrastructure Design
 
-\chapter{Management File}\label{sec:MGT}
+\newchapter{Management File}{sec:MGT}
 The Management File (MGT) is a developer generated file
 that describes the management features of the software project notably,
 organizational breakdown and responsibilities, work activities breakdown,
@@ -78,7 +78,7 @@ selected life cycle, deliveries, milestones and new risks.
 % Hewitt  - Infrastructure Design  - Software distribution
 % Hewitt  - Business Design  - Governance
 
-\chapter{Maintenance File}\label{sec:MF}
+\newchapter{Maintenance File}{sec:MF}
 The Maintenance File (MF) is a developer generated file
 that describes the planning and status of the maintenance, migration and retirement activities.
 \input{MF/MF}
@@ -87,7 +87,7 @@ that describes the planning and status of the maintenance, migration and retirem
 % Hewitt  - Infrastructure Design  - Maintenance
 % Hewitt  - Application Design  - Maintainability
 
-\chapter{Operational Documentation}\label{sec:OP}
+\newchapter{Operational Documentation}{sec:OP}
 The Operational Documentation (OP) consists of the Developer Manual~\Sec{DevMan} and
 the User Manual~\Sec{UMan}. It is important that
 the user's experience of the software feeds back into the instructions
@@ -101,12 +101,12 @@ in \Sec{feedback}.
 % \input{UMan}
 % \input{../t51/dimred.tex}
 
-\chapter{Proxyapps}\label{sec:proxyapps}
+\newchapter{Proxyapps}{sec:proxyapps}
 A number of proxyapps have been written in order to provide initial \nep \ proofs-of-concept and to test relevant 
 numerical physics.  This section provides brief outlines and links to relevant code repositories.
 \input{proxyapps/proxyapps}
 
-\chapter{Reference Material}\label{sec:REF}
+\newchapter{Reference Material}{sec:REF}
 \input{REF/REF}
 % % Sommerville  - Glossary
 % % Smith  - Requirements  - Reference Material
@@ -115,10 +115,12 @@ numerical physics.  This section provides brief outlines and links to relevant c
 % % Hewitt  -  Acronyms and Symbols
 
 \begin{warpHTML}
-\chapter{Videos}\label{sec:videos}
+\ForceHTMLPage
+\chapter*{Videos}\label{sec:videos}
+\phantomsection \addcontentsline{toc}{chapter}{Videos}
 videoinsert
 \end{warpHTML}
 
-\chapter{Index}\label{sec:IND}
+\newchapter{Index}{sec:IND}
 \input{IND/IND}
   % Sommerville
