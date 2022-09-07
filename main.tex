@@ -113,8 +113,16 @@
 \warpHTMLonly{ \ForceHTMLPage \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
 }
 
+\newcommand{\newchapternobreak}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
+\warpHTMLonly{ \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
+}
+
 \newcommand{\newsection}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
 \warpHTMLonly{ \ForceHTMLPage \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
+}
+
+\newcommand{\newsectionnobreak}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
+\warpHTMLonly{ \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
 }
 
 \newcommand{\newsubsection}[2]{\textit{#1} {`#2'}}

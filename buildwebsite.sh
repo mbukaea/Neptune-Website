@@ -37,9 +37,8 @@ function buildwebsite() {
   sed -i -e '/videoinsert/r videos.txt' Videos.html
   sed -i -e 's/videoinsert//g' Videos.html
   sed -i -e 's/Index 0/Index/g' Index-0.html
+  sed -i -e 's/304/500/g' Software-Engineering-Response.html
   sed -i -e 's/412/800/g' Technical-Specification.html
-  sed -i -e '0,/304/{s//500/}' Technical-Specification.html
-  sed -i -e 's/304/800/g' Technical-Specification.html
   sed -i -e 's/304/500/g' Technical-Specification.html
   sed -i -e '0,/304/{s//600/}' Objects-classes.html
   sed -i -e 's/304/800/g' Objects-classes.html
