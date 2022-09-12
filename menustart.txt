@@ -1,5 +1,12 @@
 <div class="wrap-collabsible">
   <input id="collapsible" class="toggle" type="checkbox" >
-  <label for="collapsible" class="lbl-toggle">Menu</label>
+  <label for="collapsible" class="lbl-toggle"><img
+     src="./png/menu.png"
+     style="
+     width:32pt;
+     "
+     class="inlineimage"
+     alt="(image)"
+>   Menu</label>
   <div class="collapsible-content">
     <div class="content-inner">
