@@ -19,9 +19,11 @@ function buildwebsite() {
   then
   lwarpmk html
   rm main_html.html    
-  #Changes headers of each html file to contain name of section + adds sidebar to main page
+  #Add in download link for pdf version of webpage
   sed -i -e '/<div class="center">/r link.txt' main.html
+  #Remove first occrance of /<div class="center">  in mainpage
   sed -i -e '0,/<div class="center">/{s// /}' main.html
+  #Locate and create drop down menu for website
   test=$(grep -r -n 'bodyandsidetoc' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
   test2=$(grep -r -n 'bodycontainer' ./Engineering-Requirements-Baseline.html | cut -f1 -d:)
   test3=$( expr $test2 - 3)
@@ -31,9 +33,15 @@ function buildwebsite() {
   test=$(grep -r -n '<div class="sidetoctitle">' sidebar2.txt | cut -f1 -d:)
   test2=$( expr $test + 9)
   sed -i -e "$test,$test2 d" sidebar2.txt
+  #Insert drop down menu onto mainpage
   sed -i -e '/<div class="bodywithoutsidetoc">/r sidebar2.txt' main.html
+  #Delete line due to mainpage now containing menu
   sed -i -e 's/<div class="bodywithoutsidetoc">/ /g' main.html
+  #Change drop down menu header to Neptune for homepage
+  sed -i "s,Menu,Neptune,g" main.html
+  #Move homepage while other html pages are modified
   mv ./main.html ../
+  #Create drop down menu used for other html pages and insert
   test=$(grep -r -n '<div class="bodyandsidetoc">' ./Videos.html | cut -f1 -d: )
   test2=$( expr $test + 1)
   test=$(grep -r -n '<main class="bodycontainer">' ./Videos.html | cut -f1 -d: )
@@ -41,21 +49,27 @@ function buildwebsite() {
   sed -i -e "$test2,$test3 d" *.html
   sed -i -e '$d' sidebar2.txt
   sed -i -e '/<div class="bodyandsidetoc">/r sidebar2.txt' *.html
+  #Bring back homepage
   mv ../main.html ./
+  #Delete second download link which was created
   test=$(grep -r -n 'Download' ./main.html  | tail -n 1 | cut -f1 -d:)
   test2=$( expr $test - 1)
   sed -i -e "$test,$test2 d" main.html
+  #Remove headers and place title inside drop down menu
   for file in *.html; do file2="${file/-/ }";file3="${file2/-/ }" ; sed -i "s,<h1>main</h1>, ,g" ${file}; done
   for file in *.html; do file2="${file/-/ }";file3="${file2/-/ }" ; file4="${file3/-/ }" ; file5="${file4/-/ }" ; file6="${file5/-/ }" ; sed -i "s,Menu,${file6::-5},g" ${file}; done
+  #Remove table of contents needed by lwarp for homepage
   test4=$(grep -r -n '<h3 id' ./main.html | cut -f1 -d:)
   test5=$(grep -r -n '</nav>' ./main.html | tail -n 1 | cut -f1 -d:)
   sed -i -e "$test4,$test5 d" main.html
-#  sed -i -e '693,694d' main.html
+ #Make homepage for github pages
   cp main.html index.html
-  #Resize images on webpages
+ #Rename reference webpage header
+  sed -i -e 's/Index 0/Index/g' Index-0.html
+ #Insert video html
   sed -i -e '/videoinsert/r videos.txt' Videos.html
   sed -i -e 's/videoinsert//g' Videos.html
-  sed -i -e 's/Index 0/Index/g' Index-0.html
+ #Resize images on webpages
   sed -i -e 's/304/500/g' Software-Engineering-Response.html
   sed -i -e 's/412/800/g' Technical-Specification.html
   sed -i -e 's/304/500/g' Technical-Specification.html
