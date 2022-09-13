@@ -4,6 +4,7 @@ input[type='checkbox'] { display: none; }
 .wrap-collabsible { } 
 .lbl-toggle { 
 	display: block;
+	min-width: 100;
 	width: 100% ;
 	font-weight: bold; 
 	font-family: monospace; 
@@ -23,6 +24,7 @@ input[type='checkbox'] { display: none; }
 .lbl-toggle::before { 
 	content: ' '; 
 	display: inline-block; 
+	min-width: 100;
 	border-top: 5px solid transparent; 
 	border-bottom: 5px solid transparent; 
 	border-left: 5px solid currentColor; 
@@ -49,6 +51,7 @@ input[type='checkbox'] { display: none; }
 		border: 1px solid silver;
 	border-bottom-left-radius: 7px; 
 	border-bottom-right-radius: 7px; 
+	min-width: 100;
 	padding: .5rem 1rem; } 
 
 .collapsible-content p { margin-bottom: 0; }
@@ -1298,8 +1301,6 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 							padding-right:0;
 						}
 						div.bodyandsidetoc, .bodywithoutsidetoc{
-							display: flex;
-							align-items: flex-start;
 						}
 						div.sidetoccontainer {
 							flex-basis:300px;
