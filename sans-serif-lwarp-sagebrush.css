@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/lyz0jsh.css");
 
 input[type='checkbox'] { display: none; } 
-.wrap-collabsible { margin: 1.2rem 0; } 
+.wrap-collabsible { } 
 .lbl-toggle { 
 	display: block;
 	width: 100% ;
@@ -1295,7 +1295,6 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 						}
 
 						body{
-							padding:1em;
 							padding-right:0;
 						}
 						div.bodyandsidetoc, .bodywithoutsidetoc{
