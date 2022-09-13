@@ -62,7 +62,7 @@ input[type='checkbox'] { display: none; }
     min-height: 530px;
 }
 .child {
-  max-width: 520px ;  
+  max-width: 530px ;  
   display: inline-block;
   vertical-align: middle;
   float: left;
@@ -70,7 +70,7 @@ input[type='checkbox'] { display: none; }
 }
 
 .child2 {
-  max-width: 440px ;
+  max-width: 530px ;
   margin-left: 15px;
   display: inline-block;
   vertical-align: middle;
@@ -901,6 +901,11 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 				margin: .5% ;
 				background: none ;
 			}
+
+			video {
+				max-width: 100%;
+			}
+
 
 			img.inlineimage{
 				padding: 0px ;
