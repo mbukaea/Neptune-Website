@@ -894,7 +894,7 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 			}
 
 			img, img.hyperimage, img.borderimage {
-				max-width: 1200px;
+				max-width: 100%;
 				border: 1px solid silver;
 				box-shadow: 3px 3px 3px #808080 ;
 				padding: .5% ;
