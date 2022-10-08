@@ -33,27 +33,28 @@ function buildwebsite() {
   test=$(grep -r -n '<div class="sidetoctitle">' sidebar2.txt | cut -f1 -d:)
   test2=$( expr $test + 9)
   sed -i -e "$test,$test2 d" sidebar2.txt
+  sed -i -e 's/bodyandsidetoc/bodyandsidetoc2/g' sidebar2.txt
+  sed -i -e 's/sidetoccontents/sidetoccontents2/g' sidebar2.txt
+  sed -i -e 's/sidetoccontainer/sidetoccontainer2/g' sidebar2.txt
+  sed -i -e 's/sidetoc"/sidetoc2"/g' sidebar2.txt
+  sed -i -e 's/<p>/<p class="text">/g' sidebar2.txt
   #Insert drop down menu onto mainpage
-  sed -i -e '/<div class="bodywithoutsidetoc">/r sidebar2.txt' main.html
-  #Delete line due to mainpage now containing menu
-  sed -i -e 's/<div class="bodywithoutsidetoc">/ /g' main.html
-  #Change drop down menu header to Neptune for homepage
-  sed -i "s,Menu,Neptune,g" main.html
-  #Move homepage while other html pages are modified
-  mv ./main.html ../
-  #Create drop down menu used for other html pages and insert
-  test=$(grep -r -n '<div class="bodyandsidetoc">' ./Videos.html | cut -f1 -d: )
-  test2=$( expr $test + 1)
-  test=$(grep -r -n '<main class="bodycontainer">' ./Videos.html | cut -f1 -d: )
-  test3=$( expr $test - 1)
-  sed -i -e "$test2,$test3 d" *.html
+  sed -i -e '/<div class="bodywithoutsidetoc">/r sidebar.txt' main.html
   sed -i -e '$d' sidebar2.txt
   sed -i -e '/<div class="bodyandsidetoc">/r sidebar2.txt' *.html
+  sed -i -e '0,/bodyandsidetoc/{s//bodyandsidetoc2/}' *.html
+  sed -i -e 's/<div class="sidetoccontainer">/<div class="bodyandsidetoc"><div class="sidetoccontainer">/g' *.html
+  sed -i -e '/<div class="bodywithoutsidetoc">/r sidebar2.txt' main.html
+  sed -i -e 's/bodywithoutsidetoc/bodyandsidetoc2/g' main.html
+  #Delete line due to mainpage now containing menu
+  #Change drop down menu header to Neptune for homepage
+  sed -i "s,Menu,Neptune,g" main.html
   #Remove homepage navigation bar
+  mv main.html ../
   for file in *.html; do test=$(grep -r -n 'topnavigation' ${file} | cut -f1 -d:); test2=$( expr $test + 1); sed -i -e "${test},${test2} d" ${file}; done
   for file in *.html; do test=$(grep -r -n 'botnavigation' ${file} | cut -f1 -d:); test2=$( expr $test + 1); sed -i -e "${test},${test2} d" ${file}; done 
-  #Bring back homepage
   mv ../main.html ./
+  #Bring back homepage
   #Delete second download link which was created
   test=$(grep -r -n 'Download' ./main.html  | tail -n 1 | cut -f1 -d:)
   test2=$( expr $test - 1)
@@ -72,7 +73,7 @@ function buildwebsite() {
   #Insert video html
   sed -i -e '/videoinsert/r videos.txt' Videos.html
   sed -i -e 's/videoinsert//g' Videos.html
- #Resize images on webpages
+  #Resize images on webpages
   sed -i -e 's/304/500/g' Software-Engineering-Response.html
   sed -i -e 's/412/800/g' Technical-Specification.html
   sed -i -e 's/304/500/g' Technical-Specification.html

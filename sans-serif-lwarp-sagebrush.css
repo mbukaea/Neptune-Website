@@ -1,7 +1,31 @@
 @import url("https://use.typekit.net/lyz0jsh.css");
 
+      @media (min-width: 34cm) {
+        .text {
+          display: none;
+      }
+      
+      div.bodyandsidetoc2, {
+			display: none;
+	  }
+	  
+	  div.sidetoccontents2, {
+			display: none;
+	  }
+	  
+	  div.sidetoccontainer2, {
+			display: none;
+	  }
+	  
+	  	  
+	  div.sidetoc2, {
+			display: none;
+	  }
+	  
+      }
+@media all and (max-width: 34cm) {
 input[type='checkbox'] { display: none; } 
-.wrap-collabsible { } 
+.wrap-collabsible {  }
 .lbl-toggle { 
 	display: block;
 	min-width: 100;
@@ -18,7 +42,7 @@ input[type='checkbox'] { display: none; }
 	cursor: pointer; 
 	border-radius: 7px; 
 	transition: all 0.25s ease-out; } 
-	
+
 .lbl-toggle:hover { color: #F7F7F0 ; } 
 	
 .lbl-toggle::before { 
@@ -40,7 +64,7 @@ input[type='checkbox'] { display: none; }
 	max-height: 0px; 
 	overflow: hidden; 
 	transition: max-height .25s ease-in-out; } 
-	
+
 .toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1200px;  } 
 
 .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } 
@@ -55,7 +79,7 @@ input[type='checkbox'] { display: none; }
 	padding: .5rem 1rem; } 
 
 .collapsible-content p { margin-bottom: 0; }
-
+}
 .parent {
     text-align: center;
     display: inline-block;
@@ -1306,10 +1330,13 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 							padding-right:0;
 						}
 						div.bodyandsidetoc, .bodywithoutsidetoc{
+							display: flex;
+							align-items: flex-start;
 						}
 						div.sidetoccontainer {
 							flex-basis:300px;
 							font-family: 'Proxima-Nova',proxima-nova,sans-serif;
+							border: 1px solid silver;
 							background: #FAF7F4 ;
 							font-size:.9em ;
 						}
@@ -1322,13 +1349,11 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 							padding:1em;
 							padding-top:0;
 						}
-
 						div.sidetoccontents {
 							overflow-y: auto ;
 							width: 100% ;
 							text-align: left ;
 						}
-
 						a.tocsection {
 							margin-left: 22px;
 						}
@@ -1638,19 +1663,11 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 											nav.botnavigation { display:none; }
 
 											/* Only display the sidetoc's webpage title if a small screen */
-											span.sidetocthetitle { display: none }
-
-											@media screen and (max-width: 50em) {
+											.sidetocthetitle { display: none }
+											@media screen and (max-width: 34cm) {
 												div.sidetoccontainer {
-													float: none ;
-													width: 100% ;
-													padding: 0 ;
-													border-radius: 0 ;
-													border-bottom: 1px solid black ;
-													border-top: 1px solid black ;
-													box-shadow: none ;
+												display: none 
 												}
-												span.sidetocthetitle { display: inline }
 												nav.topnavigation { display:block }
 												nav.botnavigation { display:block }
 												div.bodycontainer { width: 100% }
