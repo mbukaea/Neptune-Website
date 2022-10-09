@@ -1,6 +1,8 @@
 @import url("https://use.typekit.net/lyz0jsh.css");
 
       @media (min-width: 34cm) {
+      .wrap-collabsible {display: none;}
+      
         .text {
           display: none;
       }
