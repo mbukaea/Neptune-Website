@@ -30,7 +30,6 @@ input[type='checkbox'] { display: none; }
 .wrap-collabsible {  }
 .lbl-toggle { 
 	display: block;
-	min-width: 100;
 	width: 100% ;
 	font-weight: bold; 
 	font-family: monospace; 
@@ -39,7 +38,6 @@ input[type='checkbox'] { display: none; }
 	text-align: center; 
 	color: #F7F7F0 ;
 	background-color: #002f56 ;
-	padding:32px;
 	border: 1px solid silver;
 	cursor: pointer; 
 	border-radius: 7px; 
@@ -48,8 +46,6 @@ input[type='checkbox'] { display: none; }
 .lbl-toggle:hover { color: #F7F7F0 ; } 
 	
 .lbl-toggle::before { 
-	content: ' '; 
-	display: inline-block; 
 	min-width: 100;
 	border-top: 5px solid transparent; 
 	border-bottom: 5px solid transparent; 
@@ -124,7 +120,7 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 		line-height: 1.5 ;
 	}
 
-	p {margin: 1.5ex 0em 1.5ex 0em ;}
+	p {margin: 0.0ex 0em 0.0ex 0em ;}
 	table p {margin: .5ex 0em .5ex 0em ;}
 
 	/* Holds a section number */
