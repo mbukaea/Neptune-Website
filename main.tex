@@ -109,21 +109,26 @@
 \newcommand{\Eq}[1]{Equation~\hyperref[eq:#1]{\ref*{eq:#1}}}
 \newcommand{\Eqs}[2]{Equations~(\hyperref[eq:#1]{\ref*{eq:#1}}) and (\hyperref[eq:#2]{\ref*{eq:#2}})}
 \newcommand{\Figs}[2]{Figures~(\hyperref[eq:#1]{\ref*{fig:#1}})--\hyperref[fig:#2]{\ref*{fig:#2}}}
+\newcommand\getcurrentref[1]{%
+ \ifnumequal{\value{#1}}{0}
+  {??}
+  {\the\value{#1}}%
+}    
 
 \newcommand{\newchapter}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
-\warpHTMLonly{ \ForceHTMLPage \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
-}
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{[\getcurrentref{chapter}] #1} 
+}}
 
 \newcommand{\newchapternobreak}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
-\warpHTMLonly{ \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
+\warpHTMLonly{ \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{[\getcurrentref{chapter}] #1} }
 }
 
 \newcommand{\newsection}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
-\warpHTMLonly{ \ForceHTMLPage \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
-}
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{[\getcurrentref{chapter}.\getcurrentref{section}] #1} 
+}}
 
 \newcommand{\newsectionnobreak}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
-\warpHTMLonly{ \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
+\warpHTMLonly{ \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{[\getcurrentref{chapter}.\getcurrentref{section}] #1} }
 }
 
 \newcommand{\newsubsection}[2]{\textit{#1} {`#2'}}
