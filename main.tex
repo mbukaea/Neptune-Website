@@ -103,12 +103,12 @@
 
 \newcommand{\culhamissueno}{1.00}%<==edit
 \newcommand{\culhamshorttitle}{CD/EXCALIBUR-FMS/0054}%<==edit
-\newcommand{\Sec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}
-\newcommand{\Fig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
-\newcommand{\Tab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
-\newcommand{\Eq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
-\newcommand{\Eqs}[2]{Equations(\hyperref[eq:#1]{Equation~\ref*{eq:#1}}) and (\hyperref[eq:#2]{\ref*{eq:#2}})}
-\newcommand{\Figs}[2]{Equations(\hyperref[eq:#1]{Figures~\ref*{fig:#1}}) -- \hyperref[fig:#2]{\ref*{fig:#2}}}
+\newcommand{\Sec}[1]{Section~\hyperref[sec:#1]{\ref*{sec:#1}}}
+\newcommand{\Fig}[1]{Figure~\hyperref[fig:#1]{\ref*{fig:#1}}}
+\newcommand{\Tab}[1]{Table~\hyperref[tab:#1]{\ref*{tab:#1}}}
+\newcommand{\Eq}[1]{Equation~\hyperref[eq:#1]{\ref*{eq:#1}}}
+\newcommand{\Eqs}[2]{Equations~(\hyperref[eq:#1]{\ref*{eq:#1}}) and (\hyperref[eq:#2]{\ref*{eq:#2}})}
+\newcommand{\Figs}[2]{Figures~(\hyperref[eq:#1]{\ref*{fig:#1}})--\hyperref[fig:#2]{\ref*{fig:#2}}}
 
 \newcommand{\newchapter}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
 \warpHTMLonly{ \ForceHTMLPage \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
