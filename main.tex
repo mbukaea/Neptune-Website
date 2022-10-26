@@ -103,27 +103,27 @@
 
 \newcommand{\culhamissueno}{1.00}%<==edit
 \newcommand{\culhamshorttitle}{CD/EXCALIBUR-FMS/0054}%<==edit
-\newcommand{\Sec}[1]{Section~\nameref{sec:#1}}
-\newcommand{\Fig}[1]{Figure~\nameref{fig:#1}}
-\newcommand{\Tab}[1]{Table~\nameref{tab:#1}}
-\newcommand{\Eq}[1]{Equation~(\nameref{eq:#1})}
-\newcommand{\Eqs}[2]{Equations(\nameref{eq:#1}) and~(\nameref{eq:#2})}
-\newcommand{\Figs}[2]{Figures~\nameref{fig:#1}--~\nameref{fig:#2}}
+\newcommand{\Sec}[1]{\hyperref[sec:#1]{Section~\ref*{sec:#1}}}
+\newcommand{\Fig}[1]{\hyperref[fig:#1]{Figure~\ref*{fig:#1}}}
+\newcommand{\Tab}[1]{\hyperref[tab:#1]{Table~\ref*{tab:#1}}}
+\newcommand{\Eq}[1]{\hyperref[eq:#1]{Equation~\ref*{eq:#1}}}
+\newcommand{\Eqs}[2]{Equations(\hyperref[eq:#1]{Equation~\ref*{eq:#1}}) and (\hyperref[eq:#2]{\ref*{eq:#2}})}
+\newcommand{\Figs}[2]{Equations(\hyperref[eq:#1]{Figures~\ref*{fig:#1}}) -- \hyperref[fig:#2]{\ref*{fig:#2}}}
 
 \newcommand{\newchapter}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
-\warpHTMLonly{ \ForceHTMLPage \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
 }
 
 \newcommand{\newchapternobreak}[2]{ \warpprintonly { \chapter{#1}  \label{#2} } 
-\warpHTMLonly{ \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
+\warpHTMLonly{ \refstepcounter{chapter} \chapter*{#1} \label{#2} \phantomsection \addcontentsline{toc}{chapter}{#1} }
 }
 
 \newcommand{\newsection}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
-\warpHTMLonly{ \ForceHTMLPage \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
+\warpHTMLonly{ \ForceHTMLPage \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
 }
 
 \newcommand{\newsectionnobreak}[2]{ \warpprintonly { \section{#1}  \label{#2} } 
-\warpHTMLonly{ \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
+\warpHTMLonly{ \refstepcounter{section} \section*{#1} \label{#2} \phantomsection \addcontentsline{toc}{section}{#1} }
 }
 
 \newcommand{\newsubsection}[2]{\textit{#1} {`#2'}}
