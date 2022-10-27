@@ -63,7 +63,7 @@ input[type='checkbox'] { display: none; }
 	overflow: hidden; 
 	transition: max-height .25s ease-in-out; } 
 
-.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1200px;  } 
+.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1300px;  } 
 
 .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } 
 
