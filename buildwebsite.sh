@@ -79,6 +79,8 @@ function buildwebsite() {
   sed -i -e 's/304/500/g' Technical-Specification.html
   sed -i -e '0,/304/{s//600/}' Objects-classes.html
   sed -i -e 's/304/800/g' Objects-classes.html
+  #Add Javascript to allow copyable code
+  for file in *.html; do  sed -i -e '/<title>/r code.txt' ${file}; done
   fi
 }
 

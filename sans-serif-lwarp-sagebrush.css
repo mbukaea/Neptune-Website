@@ -1,30 +1,4 @@
 @import url("https://use.typekit.net/lyz0jsh.css");
-
-      @media (min-width: 34cm) {
-      .wrap-collabsible {display: none;}
-      
-        .text {
-          display: none;
-      }
-      
-      div.bodyandsidetoc2, {
-			display: none;
-	  }
-	  
-	  div.sidetoccontents2, {
-			display: none;
-	  }
-	  
-	  div.sidetoccontainer2, {
-			display: none;
-	  }
-	  
-	  	  
-	  div.sidetoc2, {
-			display: none;
-	  }
-	  
-      }
 @media all and (max-width: 34cm) {
 input[type='checkbox'] { display: none; } 
 .wrap-collabsible {  }
@@ -63,7 +37,7 @@ input[type='checkbox'] { display: none; }
 	overflow: hidden; 
 	transition: max-height .25s ease-in-out; } 
 
-.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1300px;  } 
+.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1200px;  } 
 
 .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } 
 
@@ -364,6 +338,43 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 		text-decoration-skip: auto ;
 		text-decoration-style: double ;
 	}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
 	span.uwave {
 		text-decoration: underline ;
@@ -1912,3 +1923,346 @@ a.tocsubparagraph {display: inline-block ; margin-left: 5em ;
 									@media screen and (max-width: 45em) {
 										div.sidetoccontainer { border-radius: 0 ; }
 									}
+
+html {
+    /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
+    --primary-color: #1779c4;
+    --primary-dark-color: #335c80;
+    --primary-light-color: #70b1e9;
+
+    /* page base colors */
+    --page-background-color: white;
+    --page-foreground-color: #2f4153;
+    --page-secondary-foreground-color: #637485;
+
+    /* color for all separators on the website: hr, borders, ... */
+    --separator-color: #dedede;
+
+    /* border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ... */
+    --border-radius-large: 8px;
+    --border-radius-small: 4px;
+    --border-radius-medium: 6px;
+
+    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page. */
+    --spacing-small: 5px;
+    --spacing-medium: 10px;
+    --spacing-large: 16px;
+
+    /* default box shadow used for raising an element above the normal content. Used in dropdowns, Searchresult, ... */
+    --box-shadow: 0 2px 8px 0 rgba(0,0,0,.075);
+
+    --odd-color: rgba(0,0,0,.028);
+
+    /* font-families. will affect all text on the website
+     * font-family: the normal font for text, headlines, menus
+     * font-family-monospace: used for preformatted text in memtitle, code, fragments
+     */
+    --font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    --font-family-monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+
+    /* font sizes */
+    --page-font-size: 15.6px;
+    --navigation-font-size: 14.4px;
+    --code-font-size: 14px; /* affects code, fragment */
+    --title-font-size: 22px;
+
+    /* content text properties. These only affect the page content, not the navigation or any other ui elements */
+    --content-line-height: 27px;
+    /* The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to auto.*/
+    --content-maxwidth: 1000px;
+
+    /* colors for various content boxes: @warning, @note, @deprecated @bug */
+    --warning-color: #f8d1cc;
+    --warning-color-dark: #b61825;
+    --warning-color-darker: #75070f;
+    --note-color: #faf3d8;
+    --note-color-dark: #f3a600;
+    --note-color-darker: #5f4204;
+    --todo-color: #e4f3ff;
+    --todo-color-dark: #1879C4;
+    --todo-color-darker: #274a5c;
+    --deprecated-color: #ecf0f3;
+    --deprecated-color-dark: #5b6269;
+    --deprecated-color-darker: #43454a;
+    --bug-color: #e4dafd;
+    --bug-color-dark: #5b2bdd;
+    --bug-color-darker: #2a0d72;
+    --invariant-color: #d8f1e3;
+    --invariant-color-dark: #44b86f;
+    --invariant-color-darker: #265532;
+
+    /* blockquote colors */
+    --blockquote-background: #f8f9fa;
+    --blockquote-foreground: #636568;
+
+    /* table colors */
+    --tablehead-background: #f1f1f1;
+    --tablehead-foreground: var(--page-foreground-color);
+
+    /* menu-display: block | none
+     * Visibility of the top navigation on screens >= 768px. On smaller screen the menu is always visible.
+     * `GENERATE_TREEVIEW` MUST be enabled!
+     */
+    --menu-display: block;
+
+    --menu-focus-foreground: var(--page-background-color);
+    --menu-focus-background: var(--primary-color);
+    --menu-selected-background: rgba(0,0,0,.05);
+
+
+    --header-background: var(--page-background-color);
+    --header-foreground: var(--page-foreground-color);
+
+    /* searchbar colors */
+    --searchbar-background: var(--side-nav-background);
+    --searchbar-foreground: var(--page-foreground-color);
+
+    /* searchbar size
+     * (`searchbar-width` is only applied on screens >= 768px.
+     * on smaller screens the searchbar will always fill the entire screen width) */
+    --searchbar-height: 33px;
+    --searchbar-width: 210px;
+    --searchbar-border-radius: var(--searchbar-height);
+
+    /* code block colors */
+    --code-background: #f5f5f5;
+    --code-foreground: var(--page-foreground-color);
+
+    /* fragment colors */
+    --fragment-background: #F8F9FA;
+    --fragment-foreground: #37474F;
+    --fragment-keyword: #bb6bb2;
+    --fragment-keywordtype: #8258b3;
+    --fragment-keywordflow: #d67c3b;
+    --fragment-token: #438a59;
+    --fragment-comment: #969696;
+    --fragment-link: #5383d6;
+    --fragment-preprocessor: #46aaa5;
+    --fragment-linenumber-color: #797979;
+    --fragment-linenumber-background: #f4f4f5;
+    --fragment-linenumber-border: #e3e5e7;
+    --fragment-lineheight: 20px;
+
+    /* sidebar navigation (treeview) colors */
+    --side-nav-background: #fbfbfb;
+    --side-nav-foreground: var(--page-foreground-color);
+    --side-nav-arrow-opacity: 0;
+    --side-nav-arrow-hover-opacity: 0.9;
+
+    --toc-background: var(--side-nav-background);
+    --toc-foreground: var(--side-nav-foreground);
+
+    /* height of an item in any tree / collapsable table */
+    --tree-item-height: 30px;
+
+    --memname-font-size: var(--code-font-size);
+    --memtitle-font-size: 18px;
+
+    --webkit-scrollbar-size: 7px;
+    --webkit-scrollbar-padding: 4px;
+    --webkit-scrollbar-color: var(--separator-color);
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        --page-font-size: 16px;
+        --navigation-font-size: 16px;
+        --code-font-size: 15px; /* affects code, fragment */
+        --title-font-size: 22px;
+    }
+}
+
+/*
+ Code & Fragments
+ */
+
+code, div.fragment, pre.fragment {
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--separator-color);
+    overflow: hidden;
+}
+
+code {
+    display: inline;
+    background: var(--code-background);
+    color: var(--code-foreground);
+    padding: 2px 6px;
+    word-break: break-word;
+}
+
+div.fragment, pre.fragment {
+    margin: var(--spacing-medium) 0;
+    padding: calc(var(--spacing-large) - (var(--spacing-large) / 6)) var(--spacing-large);
+    background: var(--fragment-background);
+    color: var(--fragment-foreground);
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 767px) {
+    div.fragment, pre.fragment {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+    }
+
+    .contents > div.fragment,
+    .textblock > div.fragment,
+    .textblock > pre.fragment,
+    .contents > .doxygen-awesome-fragment-wrapper > div.fragment,
+    .textblock > .doxygen-awesome-fragment-wrapper > div.fragment,
+    .textblock > .doxygen-awesome-fragment-wrapper > pre.fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-large));
+        border-radius: 0;
+        border-left: 0;
+    }
+
+    .textblock li > .fragment,
+    .textblock li > .doxygen-awesome-fragment-wrapper > .fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-large));
+    }
+
+    .memdoc li > .fragment,
+    .memdoc li > .doxygen-awesome-fragment-wrapper > .fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
+    }
+
+    .textblock ul, .memdoc ul {
+        overflow: initial;
+    }
+
+    .memdoc > div.fragment,
+    .memdoc > pre.fragment,
+    dl dd > div.fragment,
+    dl dd pre.fragment,
+    .memdoc > .doxygen-awesome-fragment-wrapper > div.fragment,
+    .memdoc > .doxygen-awesome-fragment-wrapper > pre.fragment,
+    dl dd > .doxygen-awesome-fragment-wrapper > div.fragment,
+    dl dd .doxygen-awesome-fragment-wrapper > pre.fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
+        border-radius: 0;
+        border-left: 0;
+    }
+}
+
+code, code a, pre.fragment, div.fragment, div.fragment .line, div.fragment span, div.fragment .line a, div.fragment .line span {
+    font-family: var(--font-family-monospace);
+    font-size: var(--code-font-size) !important;
+}
+
+div.line:after {
+    margin-right: var(--spacing-medium);
+}
+
+div.fragment .line, pre.fragment {
+    white-space: pre;
+    word-wrap: initial;
+    line-height: var(--fragment-lineheight);
+}
+
+div.fragment span.keyword {
+    color: var(--fragment-keyword);
+}
+
+div.fragment span.keywordtype {
+    color: var(--fragment-keywordtype);
+}
+
+div.fragment span.keywordflow {
+    color: var(--fragment-keywordflow);
+}
+
+div.fragment span.stringliteral {
+    color: var(--fragment-token)
+}
+
+div.fragment span.comment {
+    color: var(--fragment-comment);
+}
+
+div.fragment a.code {
+    color: var(--fragment-link) !important;
+}
+
+div.fragment span.preprocessor {
+    color: var(--fragment-preprocessor);
+}
+
+div.fragment span.lineno {
+    display: inline-block;
+    width: 27px;
+    border-right: none;
+    background: var(--fragment-linenumber-background);
+    color: var(--fragment-linenumber-color);
+}
+
+div.fragment span.lineno a {
+    background: none;
+    color: var(--fragment-link) !important;
+}
+
+div.fragment .line:first-child .lineno {
+    box-shadow: -999999px 0px 0 999999px var(--fragment-linenumber-background), -999998px 0px 0 999999px var(--fragment-linenumber-border);
+}
+
+
+
+/*
+ Optional fragment copy button
+*/
+.doxygen-awesome-fragment-wrapper {
+    position: relative;
+}
+
+doxygen-awesome-fragment-copy-button {
+    opacity: 0;
+    background: var(--fragment-background);
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: calc(var(--spacing-large) - (var(--spacing-large) / 2.5));
+    top: calc(var(--spacing-large) - (var(--spacing-large) / 2.5));
+    border: 1px solid var(--fragment-foreground);
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doxygen-awesome-fragment-wrapper:hover doxygen-awesome-fragment-copy-button, doxygen-awesome-fragment-copy-button.success {
+    opacity: .28;
+}
+
+doxygen-awesome-fragment-copy-button:hover, doxygen-awesome-fragment-copy-button.success {
+    opacity: 1 !important;
+}
+
+doxygen-awesome-fragment-copy-button:active:not([class~=success]) svg {
+    transform: scale(.91);
+}
+
+doxygen-awesome-fragment-copy-button svg {
+    fill: var(--fragment-foreground);
+    width: 18px;
+    height: 18px;
+}
+
+doxygen-awesome-fragment-copy-button.success svg {
+    fill: rgb(14, 168, 14);
+}
+
+doxygen-awesome-fragment-copy-button.success {
+    border-color: rgb(14, 168, 14);
+}
+
+@media screen and (max-width: 767px) {
+    .textblock > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    .textblock li > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    .memdoc li > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    .memdoc > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    dl dd > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button {
+        right: 0;
+    }
+}
+
+
