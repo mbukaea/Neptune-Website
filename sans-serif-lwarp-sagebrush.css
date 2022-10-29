@@ -1,4 +1,32 @@
 @import url("https://use.typekit.net/lyz0jsh.css");
+
+
+       @media (min-width: 34cm) {
+       .wrap-collabsible {display: none;}
+
+         .text {
+           display: none;
+       }
+
+       div.bodyandsidetoc2, {
+ 			display: none;
+ 	  }
+
+ 	  div.sidetoccontents2, {
+ 			display: none;
+ 	  }
+
+ 	  div.sidetoccontainer2, {
+ 			display: none;
+ 	  }
+
+
+ 	  div.sidetoc2, {
+ 			display: none;
+ 	  }
+
+       }
+       
 @media all and (max-width: 34cm) {
 input[type='checkbox'] { display: none; } 
 .wrap-collabsible {  }
@@ -37,7 +65,7 @@ input[type='checkbox'] { display: none; }
 	overflow: hidden; 
 	transition: max-height .25s ease-in-out; } 
 
-.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1200px;  } 
+.toggle:checked + .lbl-toggle + .collapsible-content { max-height: 1300px;  } 
 
 .toggle:checked+.lbl-toggle { border-bottom-right-radius: 0; border-bottom-left-radius: 0; } 
 
